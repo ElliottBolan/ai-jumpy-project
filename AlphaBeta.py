@@ -21,12 +21,11 @@ def EstimatePosition(board):
 def move_white(copy_array, i):
     # Check if the move is out of bounds or not white
     if copy_array[i] != 'w' and copy_array[i] != 'W':
-        print("invalid move: not a white piece at position", i)
         return copy_array
     if i == 15:
         return copy_array
     if i < 0 or i >= len(copy_array):
-        print(f"index {i} out of bounds [0,15].")
+        return copy_array
 
     # Check if the next position is empty
     elif copy_array[i + 1] == 'x':
@@ -151,10 +150,6 @@ def main():
     print(f"Output board position: {''.join(new_board)}")
     print(f"Positions evaluated by static estimation: {positions_evaluated}.")
     print(f"MINIMAX estimate: {best_value}.")
-    # Write the new board position to the output file
-    with open(output_filename, 'w') as file:
-        for char in copy_array:
-            file.write(char)
 
 if __name__ == "__main__":
     main()

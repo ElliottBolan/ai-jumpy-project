@@ -80,9 +80,10 @@ def EstimatePosition(board):
         j = board.index('B') if 'B' in board else 0
         return i + j - 15
 
-def minimax(copy_array, depth, maximizing_player, positions_evaluated):
+def minimax(copy_array, depth, maximizing_player):
+    global positions_evaluated
+    positions_evaluated += 1
     if depth == 0 or WhiteWin(copy_array) or BlackWin(copy_array):
-        positions_evaluated += 1
         return EstimatePosition(copy_array)
     else:
         if maximizing_player:  # White's turn
@@ -91,7 +92,7 @@ def minimax(copy_array, depth, maximizing_player, positions_evaluated):
                 if copy_array[i] == 'w' or copy_array[i] == 'W':
                     new_copy = copy_array.copy()
                     new_copy = move_white(new_copy, i)
-                    eval = minimax(new_copy, depth - 1, False, positions_evaluated)
+                    eval = minimax(new_copy, depth - 1, False)
                     max_eval = max(max_eval, eval)
             return max_eval
         else:  # Black's turn
@@ -99,7 +100,7 @@ def minimax(copy_array, depth, maximizing_player, positions_evaluated):
             for i in range(len(copy_array)):
                 if copy_array[i] == 'b' or copy_array[i] == 'B':
                     new_copy = copy_array.copy()
-                    eval = minimax(new_copy, depth - 1, True, positions_evaluated)
+                    eval = minimax(new_copy, depth - 1, True)
                     min_eval = min(min_eval, eval)
             return min_eval
 
@@ -110,122 +111,67 @@ def main():
         output_filename = sys.argv[2]
         tree_depth = int(sys.argv[3])
 
-        # Read the input board position
-        with open(input_filename, 'r') as file:
-            copy_array = list(file.readline().strip())
-
-        # Reverse the board and convert it back to a list
-        copy_array = list(reversed(copy_array))
-        for idx, c in enumerate(copy_array):
-            if c == 'b':
-                copy_array[idx] = 'w'
-            elif c == 'B':
-                copy_array[idx] = 'W'
-            elif c == 'w':
-                copy_array[idx] = 'b'
-            elif c == 'W':
-                copy_array[idx] = 'B'
-
-        # Run the minimax algorithm
-        best_value = float('-inf')
-        best_move = -1
-        for i in range(len(copy_array)):
-            if copy_array[i] == 'w' or copy_array[i] == 'W':
-                new_copy = copy_array.copy()
-                new_copy = move_white(new_copy, i)
-                move_value = minimax(new_copy, tree_depth - 1, False, positions_evaluated)
-                if move_value > best_value:
-                    best_value = move_value
-                    best_move = i
-
-        # Make the best move
-        new_board = move_white(copy_array.copy(), best_move)
-
-        # Later in the code, when reversing the new board
-        new_board = list(reversed(new_board))
-        for idx, c in enumerate(new_board):
-            if c == 'b':
-                new_board[idx] = 'w'
-            elif c == 'B':
-                new_board[idx] = 'W'
-            elif c == 'w':
-                new_board[idx] = 'b'
-            elif c == 'W':
-                new_board[idx] = 'B'
-
-        # Write the new board position to the output file
-        with open(output_filename, 'w') as file:
-            file.write(''.join(new_board))
-
-        # Print the results
-        print(f"Output board position: {''.join(new_board)}")
-        print(f"Positions evaluated by static estimation: {positions_evaluated}.")
-        print(f"MINIMAX estimate: {best_value}.")
-        # Write the new board position to the output file
-        with open(output_filename, 'w') as file:
-            for char in copy_array:
-                file.write(char)
     else:
         # Default behavior (interactive mode)
         input_filename = input("Enter the input board positions filename: ")
         output_filename = input("Enter the output board positions filename: ")
         tree_depth = int(input("Enter the depth of the tree to be searched: "))
 
-        # Read the input board position
-        with open(input_filename, 'r') as file:
-            copy_array = list(file.readline().strip())
+    # Read the input board position
+    with open(input_filename, 'r') as file:
+        copy_array = list(file.readline().strip())
 
-                # Reverse the board and convert it back to a list
-        copy_array = list(reversed(copy_array))
-        for idx, c in enumerate(copy_array):
-            if c == 'b':
-                copy_array[idx] = 'w'
-            elif c == 'B':
-                copy_array[idx] = 'W'
-            elif c == 'w':
-                copy_array[idx] = 'b'
-            elif c == 'W':
-                copy_array[idx] = 'B'
-        
-        # Run the minimax algorithm
-        best_value = float('-inf')
-        best_move = -1
-        for i in range(len(copy_array)):
-            if copy_array[i] == 'w' or copy_array[i] == 'W':
-                new_copy = copy_array.copy()
-                new_copy = move_white(new_copy, i)
-                move_value = minimax(new_copy, tree_depth - 1, False, positions_evaluated)
-                if move_value > best_value:
-                    best_value = move_value
-                    best_move = i
+            # Reverse the board and convert it back to a list
+    copy_array = list(reversed(copy_array))
+    for idx, c in enumerate(copy_array):
+        if c == 'b':
+            copy_array[idx] = 'w'
+        elif c == 'B':
+            copy_array[idx] = 'W'
+        elif c == 'w':
+            copy_array[idx] = 'b'
+        elif c == 'W':
+            copy_array[idx] = 'B'
+    
+    # Run the minimax algorithm
+    best_value = float('-inf')
+    best_move = -1
+    for i in range(len(copy_array)):
+        if copy_array[i] == 'w' or copy_array[i] == 'W':
+            new_copy = copy_array.copy()
+            new_copy = move_white(new_copy, i)
+            move_value = minimax(new_copy, tree_depth - 1, False)
+            if move_value > best_value:
+                best_value = move_value
+                best_move = i
 
-        # Make the best move
-        new_board = move_white(copy_array.copy(), best_move)
+    # Make the best move
+    new_board = move_white(copy_array.copy(), best_move)
 
-        # Later in the code, when reversing the new board
-        new_board = list(reversed(new_board))
-        for idx, c in enumerate(new_board):
-            if c == 'b':
-                new_board[idx] = 'w'
-            elif c == 'B':
-                new_board[idx] = 'W'
-            elif c == 'w':
-                new_board[idx] = 'b'
-            elif c == 'W':
-                new_board[idx] = 'B'
+    # Later in the code, when reversing the new board
+    new_board = list(reversed(new_board))
+    for idx, c in enumerate(new_board):
+        if c == 'b':
+            new_board[idx] = 'w'
+        elif c == 'B':
+            new_board[idx] = 'W'
+        elif c == 'w':
+            new_board[idx] = 'b'
+        elif c == 'W':
+            new_board[idx] = 'B'
 
-        # Write the new board position to the output file
-        with open(output_filename, 'w') as file:
-            file.write(''.join(new_board))
+    # Write the new board position to the output file
+    with open(output_filename, 'w') as file:
+        file.write(''.join(new_board))
 
-        # Print the results
-        print(f"Output board position: {''.join(new_board)}")
-        print(f"Positions evaluated by static estimation: {positions_evaluated}.")
-        print(f"MINIMAX estimate: {best_value}.")
-        # Write the new board position to the output file
-        with open(output_filename, 'w') as file:
-            for char in copy_array:
-                file.write(char)
+    # Print the results
+    print(f"Output board position: {''.join(new_board)}")
+    print(f"Positions evaluated by static estimation: {positions_evaluated}.")
+    print(f"MINIMAX estimate: {best_value}.")
+    # Write the new board position to the output file
+    with open(output_filename, 'w') as file:
+        for char in copy_array:
+            file.write(char)
 
 if __name__ == "__main__":
     main()
