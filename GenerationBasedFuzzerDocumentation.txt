@@ -1,0 +1,789 @@
+PS C:\Users\dudee\Documents\VSCodePrograms> & C:/Users/dudee/AppData/Local/Programs/Python/Python313/python.exe c:/Users/dudee/Documents/VSCodePrograms/Fuzzers/GenerationBasedFuzzer.py
+Input: INVALID_INPUT
+Output: Enter numbers separated by space: 
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 638 -972
+Output: Enter numbers separated by space: Result: -334.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: -2.994011976047904e+27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 1e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 1e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -753.1035411823261
+Output: Enter numbers separated by space: Result: -7.531035411823261e-28
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -754.6010973341001 -827.8372662235012 51.221520985150164 -689.8859973612497 -165.43184107279956 -644.4843538874836 -110.38366016338364 -195.39794202065752 -1.526818019776897
+Output: Enter numbers separated by space: Result: -3338.327455097802
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -227.7279685720805 -906.3573079464251 -931.1601884759777 -490.39505679995375 -501.76624382248235 379.3971655333137 817.9264766219189
+Output: Enter numbers separated by space: Result: 0.5571901344253217
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 1.7947195009678093e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -54 -650 619 -520 534
+Output: Enter numbers separated by space: Result: -3.9560499544197845e-29
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 866 401 499 -7 -286 -509 -133 -736 -295
+Output: Enter numbers separated by space: Result: 5.0555478900501667e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 634 -491 717 503 -431 852 -278 526 -755 962
+Output: Enter numbers separated by space: Result: 2239.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 4.466279589102278e+26
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 2239.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 422 -77 -850 -341 -339 -442
+Output: Enter numbers separated by space: Result: -0.7266636891469406
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 81.78536465934076
+Output: Enter numbers separated by space: Result: -112.54912813292192
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 159 195 814 -767 374 -891
+Output: Enter numbers separated by space: Result: -116.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: -8.620689655172414e+27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 510.3002506034445 190.88999638023097 -579.4395624890226
+Output: Enter numbers separated by space: Result: -1.4123079401379734e-26
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 925.6417961250456 -110.07998569910592 -350.8860659835144 -135.97264708197997 -197.3977135241771 -979.2938115501033
+Output: Enter numbers separated by space: Result: 6.004274306005757e+28
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 16.654802046597922
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 6.004274306005757e+28
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 16.654802046597922
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 919.2515442627036 -115.70367573221006
+Output: Enter numbers separated by space: Result: 48.24721820663335
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 22 -470 -321 850 -428 -297 885 702 421
+Output: Enter numbers separated by space: Result: 28.271059984396533
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 546 -406 -363 684 783 822 213 -136 -208 -502
+Output: Enter numbers separated by space: Result: 50.68787660564926
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -541
+Output: Enter numbers separated by space: Result: -10.673163608903367
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 86.76997821474606 -696.7533028353648 -151.70301363696638 545.1129207053959 -120.00646853489297 358.2407994967275 497.0082062532442 -413.06515740219015 -373.78071328259125 230.08139916672303
+Output: Enter numbers separated by space: Result: -38.095351855168815
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -418 381 -210
+Output: Enter numbers separated by space: Result: -247.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -309.72274761275617 -523.9183150770818 300.19179000557074 -34.79465965626207 313.2655104727205
+Output: Enter numbers separated by space: Result: 1.0323013031085377
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 953 -352
+Output: Enter numbers separated by space: Result: 582.1943633997428
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -776.0791927335769 77.50574563456598 916.7330763872435 -724.8123341047956 546.4586303795802 121.99543754046658 90.54542255789966 0.8189006459920165 -17.39045726794177 -225.09648177315228
+Output: Enter numbers separated by space: Result: 10.678747266281448
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 1e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -855
+Output: Enter numbers separated by space: Result: -8.55e-28
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -47.428956587279686 -139.90352438890216 870.6318621100643 386.6017161586185
+Output: Enter numbers separated by space: Result: -1.251346312622808e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -938.355324233199 -697.4823924915559 203.9419182237391 -477.3709557704449 -123.15621900339852
+Output: Enter numbers separated by space: Result: 1.6241890456487006e-27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -782.2368094621597 407.25024212312087 166.18512206693686
+Output: Enter numbers separated by space: Result: -1.2855735348757185e+29
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -784 -398 502 -18
+Output: Enter numbers separated by space: Result: 5.429483270029189e-27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 711.7460412271389 735.2181896524228
+Output: Enter numbers separated by space: Result: 2.6650127809893462e+29
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 4 129 21 -561 -231 581 411 425
+Output: Enter numbers separated by space: Result: 779.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -781 -18 91 84 -707 873 606 -465 370 -523
+Output: Enter numbers separated by space: Result: -0.6033376123234917
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -37.12381891756934 -56.49975382434434 -116.77161087156549
+Output: Enter numbers separated by space: Result: 348.71882560617075
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 2.8676398478393605e+27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 1e+30
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 584 -198 13 885 755 703 -178 -802 311 -660
+Output: Enter numbers separated by space: Result: 1.4129999999999999e-27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -145.9721998506833 -206.6170512954841 156.21790344866508 911.2601688536913 25.553013348120658 73.6467758351921 -561.1919202885929
+Output: Enter numbers separated by space: Result: 252.8966900509089
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 3.9541838202733967e+27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 745 131 -443
+Output: Enter numbers separated by space: Result: 1.0950426679204355e-25
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 646.7153083990643 336.4882241628279 -945.6789412040343 -377.3570720130814 696.9653622064045
+Output: Enter numbers separated by space: Result: 3.2613604201323213e+27
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 306.62051143658255
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: -842.3241174935251 880.0145116535466 -418.9744694768824 -602.7588004776725 998.4507116954599 -913.7566509412725 -582.1569310992052 -668.2815854761177 601.8252460009769
+Output: Enter numbers separated by space: Result: -5.048462277889236
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 211 77 -645
+Output: Enter numbers separated by space: Result: -357.0
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 388.79837457950384 -778.3056041920297 434.5926199519977 -9.06711262157603 -593.8887372074014 181.11596879064746 -356.8250333026439
+Output: Enter numbers separated by space: Result: 2.0548446050462243
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 4.866548047206249e+29
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: -402.7525902486426 -792.6784081181706 808.8167965172156 -780.1941382028148 103.58057613875121 390.22034175449267 144.8193930039497 706.9114294227982
+Output: Enter numbers separated by space: Result: 178.72340026757934
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 202.34471846308884 -632.9768182656614 705.1874637095111 835.6159013509189 -143.79985806478567 164.86059016980698
+Output: Enter numbers separated by space: Result: 6.329512507423381
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: 1.57990050391271e+29
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 161.12953134829377 -365.71504676986285 -239.18012253599636 -220.48645203428157 -154.740734874184 -652.0030314384306 -689.2109364526335
+Output: Enter numbers separated by space: Result: -1.367305591337698e-26
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: 297.8458397173597 -988.7906792624867 605.0159972412389 -684.3804478293936 46.32897408732856 670.2773046752006 505.07537200556703
+Output: Enter numbers separated by space: Result: -3.3011812684333146e+28
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 1000000000000000000000000000000 2
+Output: Enter numbers separated by space: Result: -30.292186907827187
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:
+Input: INVALID_INPUT
+Output: Enter numbers separated by space:
+Error: Traceback (most recent call last):
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 58, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dudee\Documents\VSCodePrograms\CWEVulnerableSum.py", line 23, in main
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+               ~~~~~^^^
+ValueError: could not convert string to float: 'INVALID_INPUT'
+
+Input: 0 0 0 0 0
+Output: Enter numbers separated by space: Result: 1
+Before corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+Memory corruption attempt successful!
+After corruption: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+Error:

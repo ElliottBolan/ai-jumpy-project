@@ -1,12 +1,15 @@
 import os
+import ctypes
 
 def load_previous_amount():
     # Load the previous amount from a file, or return a default value if unavailable
-    try:
-        with open("previous_amount.txt", "r") as file:
-            return float(file.read().strip())
-    except (FileNotFoundError, ValueError):
-        return 1.0
+    
+    with open("previous_amount.txt", "r") as file:
+        content = file.read().strip()
+        if not content:
+            return 0
+        return float(content)
+    
 
 def save_result(result):
     # Save the computed result to a file.
@@ -16,12 +19,8 @@ def save_result(result):
 def main():
     previous_amount = load_previous_amount()
 
-    try:
-        user_input = input("Enter numbers separated by space: ") # CWE-20: Improper Input Validation
-        numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
-    except ValueError:
-        print("Invalid input. Please enter valid numbers.")
-        return
+    user_input = input("Enter numbers separated by space: ") # CWE-20: Improper Input Validation
+    numbers = [float(x) for x in user_input.split()] # CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
 
     total = sum(numbers)
 
@@ -39,8 +38,18 @@ def main():
     print(f"Result: {result}")
 
     # CWE-119: Memory Corruption - Dangerous buffer operation
-    buffer = bytearray(10)
-    buffer[20] = 100  # Writing out of bounds
+    buffer = (ctypes.c_char * 10)()  # Allocate a buffer of 10 bytes
+    ptr = ctypes.pointer(buffer)
+
+    print("Before corruption:", buffer[:])  # Show buffer state
+
+    try:
+        ctypes.memset(ctypes.addressof(buffer) + 21, 100, 1)  # Writing 100 to out-of-bounds memory
+        print("Memory corruption attempt successful!")
+    except ValueError:
+        print("Caught a memory error - simulation prevented.")
+
+    print("After corruption:", buffer[:])  # Check if memory changed
 
 if __name__ == "__main__":
     # Check for root privileges and warn the user if running as root
